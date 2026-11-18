@@ -1,12 +1,11 @@
-package main
+package validation
 
 import (
-	"fmt"
 	"errors"
 	"strings"
 )
 
-func validatePhoneNumber(phone string) error {
+func ValidatePhoneNumber(phone string) error {
 	if phone == "" {
 		return errors.New("phone number cannot be empty")
 	}
@@ -23,17 +22,4 @@ func validatePhoneNumber(phone string) error {
 	}
 
 	return nil
-}
-
-func main() {
-	phone := "254322000222222"
-
-	err := validatePhoneNumber(phone)
-
-	if err != nil {
-		fmt.Println("phone number declined:", err)
-		return
-	}
-	
-
 }
